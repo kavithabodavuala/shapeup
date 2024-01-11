@@ -1,0 +1,401 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/*==========================================
+            MAKING VARIABLES & BASICS
+ =========================================== */
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    resize: none ;
+ }
+:root{
+    --color-primary: #fff;
+    --color-secondary: #b10d3e;
+    --color-tertiary: #5ec3e2;
+    --color-quater:#c8eb6749;
+    --color-text : #111;
+    --shadow:0 2px 40px 8px rgba(15, 15, 15, .1);
+    --transition: all .4s ease-in-out ; 
+
+    --width-lg: 85%;
+    --width-sm: 95%; 
+
+} 
+body{
+    font-family: 'Dancing Script', cursive;
+    font-family: 'League Spartan', sans-serif;
+    color:var(--color-text);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar{
+    height: .5rem;
+    width: .5rem;
+}
+::-webkit-scrollbar-track{
+    background: var(--color-quater);
+}
+::-webkit-scrollbar-thumb{
+    background: var(--color-secondary);
+}
+img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+a{
+    color:var(--color-text);
+}
+span{
+    font-size: .9rem;
+}
+h1,h2,h3,h4{
+    line-height: 1.2;
+}
+h1{
+    font-size: 2.8rem;
+}
+h2{
+    font-size: 2rem;
+}
+h3{
+    font-size: 2.8rem;
+}
+h4{
+    font-size: 1.6rem;
+}
+h5{
+    font-size: 1.3rem;
+}
+h6{
+    font-size: 1rem;
+}
+.container{
+    margin: 0 auto;
+    width:var(--width-lg);
+}
+section{
+    padding:6rem 0 3rem;
+}
+section h2{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.title{
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.title h2{
+    font-size: 4rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    font-family: 'Dancing Script', cursive;
+    color: var(--color-secondary);
+    display: inline-block;
+    position: relative;
+}
+.title h2::before{
+    position: absolute;
+    content: '';
+    top: -10%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 7rem;
+    height: .1rem;
+    background: var(--color-secondary);
+}
+/*==========================================
+            NAV BAR
+ =========================================== */
+ nav{
+    background: var(--color-text);
+    color: var(--color-primary) !important;
+ }
+ .logo{
+    color: var(--color-primary);
+    padding: 1rem 0;
+ }
+ .logo div:first-child{
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    line-height: 1;
+ }
+ .logo div:first-child span{
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--color-secondary);
+ }
+ .logo div:last-child{
+    line-height: 1;
+    text-transform: uppercase;
+    font-size: .9rem;
+    letter-spacing:  .23 krem;
+    color:rgb(75, 75, 203);
+ }
+ .nav-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+ }
+nav .navlist{
+    display: flex;
+}
+nav .navlist li{
+    text-transform: uppercase;
+    font-size: .9rem;
+    cursor: pointer;
+    z-index: 111;
+}
+nav .navlist li a{ 
+    color: var(--color-primary);
+    padding: 2rem;
+    position: relative;
+}
+/*--background of list--*/
+.navlist li a::before{
+    content: '';
+    position: absolute;
+    top: 0;  
+    left: 0;
+    background: var(--color-quater);
+    height: 95%;
+    width: 100%;
+    border-bottom: .2rem solid var(--color-primary);
+    z-index: 0;
+    transition: var(--transition);
+    opacity: 0;
+    visibility: hidden;
+}
+.navlist li a:hover:before,
+.navlist li a.active:before 
+{
+    height: 95%;
+    opacity: 1;
+    visibility: visible;
+}
+.menu-btn .lnr{
+    font-size: 1.1rem;
+    display: none;
+}
+.nav-icons{
+    display: flex;
+    gap: 2rem;
+}
+.nav-icons .lnr{
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.nav-icons .lnr:hover{
+    color: var(--color-secondary); 
+    
+}
+/*==========================================
+                HOME
+ =========================================== */
+.home{
+    padding: 0;
+}
+.home .slide1{
+    color: rgb(215, 233, 27);
+    background: url("hs1.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+.home .slide2{
+    color: rgb(215, 233, 27);
+    background: url("hs2.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+.home .swiper-slide{
+    position: relative;
+}
+.home .swiper-slide .content{
+    position: absolute;
+    transform: translate(20%, 50%);
+    max-width: 550px;
+}
+.home h1{
+    font-size: 3.5rem;
+    text-transform: capitalize;
+    font-weight: 800;
+}
+.home .content p{
+    margin: 2rem 0 1rem;
+    color: var(--color-secondary );
+}
+.home .home-search input{
+    height: 4rem;
+    width: 25rem;
+    border-radius: 3rem;
+    padding: 1rem 1.6rem;
+    padding-left: 1.9rem;
+    font-size: 1rem;
+}
+.home .home-search .btn{
+    padding: 1rem 1.6rem;
+    height: 4rem;
+    width: 4rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0 50% 50% 50%;
+    position: relative;
+    left: -4rem;
+    background: var(--color-secondary);
+    color: var(--color-primary);
+}
+.home-search .lnr{
+    font-size: 1rem;
+    font-weight: 700;
+}
+.home .swiper-button-next.swiper-button-disabled,
+.home .swiper-button-prev.swiper-button-disabled{
+    opacity: 1;
+}
+.home .swiper-button-next::after{
+    color: var(--color-primary);
+    background: var(--color-secondary);
+    font-size: 2rem;
+    font-weight: 900;
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -9rem;
+    right: -3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.home .swiper-button-prev::after{
+    color: var(--color-primary);
+    background: var(--color-secondary);
+    font-size: 2rem;
+    font-weight: 900;
+    height: 7rem;
+    width: 7rem;
+    border-radius: 80%;
+    position: absolute;
+    bottom: -9rem;
+    left: -3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ /*==========================================
+                ABOUT
+ =========================================== */
+ .about-container .right{
+    position: relative;
+ }
+.about-container .right::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: -2rem;
+    right: -13rem;
+    background: url("https://cdn.pixabay.com/photo/2016/03/09/16/28/frame-1246813_640.jpg") no-repeat;
+    opacity:0.1;
+    z-index: 1;
+}
+.about-container{
+    display: grid;
+    grid-template-columns: 5.5fr 4.5fr;
+}
+.about-container .left{
+    background: url("https://cdn.pixabay.com/photo/2016/10/15/02/08/girl-from-behind-1741699_1280.jpg") no-repeat;
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    z-index: 11;
+    position: relative;  
+}
+.about-container .left .content{
+    position: absolute;
+    top: 33%;
+    left:5.8rem;
+    max-width:19rem;
+}
+.about-container .title{
+    text-align:left;
+    margin-bottom: 0;
+}
+.about-container .title h2{
+    font-size: 2.5rem;
+    margin-bottom:1rem;
+    font-weight: 900;
+    /*color: var(--color-tertiary);*/
+}
+.about-container.left h2::before{
+    top: -1.2rem;
+}
+.about-container .content p{
+    color: var(--color-primary);
+}
+.about-container .btn{
+    background: none;
+    color: var(--color-secondary);
+    font-size: .9rem;
+    font-weight: 700;
+}
+.about-container .right .image{
+    position: relative;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    margin-left: -6rem;
+    z-index:11;
+}
+.about-container .right .image img{
+    border-radius: .5rem;
+    max-width: 500px;
+    box-shadow: var(--shadow);
+}
+ /*==========================================
+            SERVICE
+ ==========================================*/
+ .service{
+    background: #f8f8f8;
+ }
+ .service-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr 1fr 1fr 1fr);
+    gap: 4rem;
+   
+ }
+ .service-container .col-3{
+    height: 260px;
+    width: 260px;
+    border-radius: 60%;
+    overflow: hidden;
+ }
+ 
+
+ /*==========================================
+            SHOP
+ =========================================== */
+
+
+
+
+ /*==========================================
+            TESTIMONAL
+ =========================================== */
+
+
+
+
+
+  
